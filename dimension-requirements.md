@@ -1,4 +1,4 @@
-Python Basics:
+#Python Basics:
 Understand python basics
 -COMPLETE - Understand ‘if, else if, else’ statements
 -COMPLETE - Understand ‘while’ and ‘for’ loops.
@@ -10,26 +10,26 @@ Understand python basics
   -COMPLETE -This will help John get familiar with functions
   -This will help john understand what ‘import’ really does (difference between ‘from XX import XX, import XX, import *’)
 
-Python Environment:
+#Python Environment:
 Packages
 -How to install/remove packages with ‘pip’
 -Understand the usage of ‘requirements.txt’
 -List installed modules in that particular python environment
 -Familiarize yourself with virtualenv and the benefits of it
 
-Useful Modules:
+#Useful Modules:
 -COMPLETE - Get familiar with module ‘argparse’ (checkHost.py, movieLookup.py)
   -COMPLETE - One of the arguments should be mandatory while another one is optional (checkHost.py, movieLookup.py)
   -COMPLETE - If the number of arguments is incorrect, properly display the ‘help’ menu (checkHost.py, movieLookup.py)
 -COMPLETE - Get familiar with the ‘requests’ module. Write a script that performs http GET/POST requests. (movieLookup.py)
 -COMPLETE - Load JSON module and play around with how to parse JSON objects (movieLookup.py)
 
-Projects:
+#Projects:
 -COMPLETE - Write something in python that can ssh to a remote system, get data back (e.g. ls), and checks if something exists/matches (checkHost.py ssh's to remote host, runs dpkg -l, parses output to list, checks list for packages listed as command line args)
   -COMPLETE(ISH) - In addition, write code that will catch an exception (e.g. if you can’t ssh into that box, inform the user with a simple ERROR message. (Didn't see an obvious way to catch ssh failing, but I did give an error message based on its return code.  I added a try/except block to movieLookup.py that works)
 -COMPLETE - (ADDED BY JOHN) Write demo of requests and json modules. (movieLookup.py)
 
-Extra Credit:
+#Extra Credit:
 -Read over PEP8 and just familiarize yourself with a little of it.
   -Run ‘pyflakes’ or ‘flake8’ against your code to see what it does and understand why it’s giving you errors
 -Write unit tests for your scripts
