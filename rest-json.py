@@ -6,6 +6,7 @@ Demonstration of REST API, retrieve json, parse json.
 
 import sys
 import requests
+import json
 
 def main():
     root = 'http://jsonplaceholder.typicode.com/'
@@ -27,8 +28,11 @@ def main():
     payload = { 'title':'foo', 'body':'bar', 'userId':92 }
     r = requests.post(url, data=payload)
     print('post: ' + str(r.status_code))
-    print(r.json())
-
+#    print(r.json())
+    output = json.loads(r.text)
+    for k in output:
+        print(k + ': ' + str(output[k]))
+    print(json.dumps(output))
 
 if __name__ == '__main__':
       main()

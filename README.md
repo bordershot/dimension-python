@@ -13,3 +13,10 @@ Project: SSH to host, run command, parse output
 * argparse:
   * Required and optional arguments.
   * Display usage on error input.
+
+rest-json.py:  
+Totally useless script against http://jsonplaceholder.typicode.com/.  Experiment with requests module, json module.
+* Get  
+* Put  
+* Post  
+* Create dictionary from JSON response  
