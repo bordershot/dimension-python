@@ -1,7 +1,20 @@
 #!/usr/bin/python3
 
 """
-Demonstration of REST API, retrieve json, parse json.
+Query http://www.omdbapi.com/ for movie data.  Parse JSON output into dictionary.  Report.
+
+Dimension requirements fulfilled:
+Project: Get familiar with JSON, requests, argparse modules
+    * Error handling -- try/expect for url connetion
+    * if/else
+    * for
+    * while
+    * Lists
+    * Dictionary
+    * argparse:
+        * Required and optional arguments.
+        * Display usage on error input.
+
 """
 
 import sys
@@ -29,7 +42,11 @@ def main():
             payload = { 's':movie, 'r':'json'}
         else:
             payload = { 't':movie, 'r':'json'}
-        r = requests.get(url, params=payload)
+        try:
+            r = requests.get(url, params=payload)
+        except:
+            sys.stderr.write('Connection Error: ' + url + '\n')
+            sys.exit(1)
         output = json.loads(r.text)
 #        print(json.dumps(output))
 #        print(output['Search'][0]['Title'])
