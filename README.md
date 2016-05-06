@@ -2,6 +2,9 @@
 
 Sample code for Dimension Data.
 
+##dimension-requirements.md  
+Checklist of topics and goals, with sections marked complete
+
 ##checkHost.py:  
 Project: SSH to host, run command, parse output  
 * Error handling (not try-exception block, just ouput ssh error)
@@ -46,3 +49,6 @@ Sample usage:
 Project: Reuse SSH to host, run command, parse output, return 5 largest log files  
 * import function from checkHost.py  
 
+## test-checkHost.py
+Project: Write a unit test for a function
+* import dpkg_parse function from checkHost.py and test

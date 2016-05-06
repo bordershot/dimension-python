@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Re-implementation of Spark EV data colletion script in python.
+Unit test for checkHost.parse_dpkg(text) with sample output from dpkg -l
 """
 
 import unittest
