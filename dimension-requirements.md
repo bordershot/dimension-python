@@ -31,6 +31,6 @@ Packages
 
 ##Extra Credit:  
 -Read over PEP8 and just familiarize yourself with a little of it.  
-  -Run ‘pyflakes’ or ‘flake8’ against your code to see what it does and understand why it’s giving you errors  
+-COMPLETE - Run ‘pyflakes’ or ‘flake8’ against your code to see what it does and understand why it’s giving you errors (Issues created in github)  
 -Write unit tests for your scripts  
 -I know John runs some trending graphs at home. Write python script(s) that will retrieve the metrics from his home devices and POST it to his trending backend. 
