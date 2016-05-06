@@ -30,7 +30,7 @@ import json
 import argparse
 
 def main():
-    parser = argparse.ArgumentParser(description='Check packages on remote system.')
+    parser = argparse.ArgumentParser(description='Lookup Movies.')
     parser.add_argument('movie', action='append', help='Movie to find')
     parser.add_argument('-m', '--movie', action='append', help='Additional movie to find')
     parser.add_argument('-s', action="store_true", default=False, help='Search for movie based on keyword "movie" argument')
