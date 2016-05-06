@@ -21,8 +21,9 @@ Totally useless script against http://jsonplaceholder.typicode.com/.  Experiment
 * Post  
 * Create dictionary from JSON response  
 
+movieLookup.py:  
 Project: Get familiar with JSON, requests, argparse modules  
-* Error handling -- try/expect for url connetion  
+* Error handling -- try/expect for url connection  
 * if/else  
 * for  
 * while  
