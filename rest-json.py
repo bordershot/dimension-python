@@ -21,8 +21,13 @@ def main():
     payload = { 'id':1, 'title':'foo', 'body':'bar', 'userId':1 }
     r = requests.put(url, data=payload)
     print('put: ' + str(r.status_code))
-    print(r.text)
-
+#    print(r.text)
+    section = 'posts'
+    url = root + section
+    payload = { 'title':'foo', 'body':'bar', 'userId':92 }
+    r = requests.post(url, data=payload)
+    print('post: ' + str(r.status_code))
+    print(r.json())
 
 
 if __name__ == '__main__':
