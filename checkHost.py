@@ -23,6 +23,9 @@ import argparse
 import re
 
 def ssh_to_host(hostname, command):
+    """
+    ssh_to_host will ssh to the 'hostname' argument and run 'command'
+    """
     ssh_cmd = 'ssh ' + hostname + ' ' + command
     (status, output) = subprocess.getstatusoutput(ssh_cmd)
     if status:
