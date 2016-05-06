@@ -20,3 +20,23 @@ Totally useless script against http://jsonplaceholder.typicode.com/.  Experiment
 * Put  
 * Post  
 * Create dictionary from JSON response  
+
+Project: Get familiar with JSON, requests, argparse modules  
+* Error handling -- try/expect for url connetion  
+* if/else  
+* for  
+* while  
+* Lists  
+* Dictionary  
+* argparse:  
+    * Required and optional arguments.  
+    * Display usage on error input.  
+* requests:  
+    * Only get, put/post not supported on API  
+* json:  
+    * Use json.loads to convert json to Dictionary  
+    * Search returns multiple movies, so Dictionary contains a list of dictionaries per movie  
+Sample usage:  
+    ./movieLookup.py "Splash"  
+    ./movieLookup.py "Star Wars" -s  
+
