@@ -36,6 +36,7 @@ Project: Get familiar with JSON, requests, argparse modules
 * json:  
     * Use json.loads to convert json to Dictionary  
     * Search returns multiple movies, so Dictionary contains a list of dictionaries per movie  
+
 Sample usage:  
     ./movieLookup.py "Splash"  
     ./movieLookup.py "Star Wars" -s  
