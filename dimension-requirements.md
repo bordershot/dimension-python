@@ -1,11 +1,13 @@
 Python Basics:
 Understand python basics
--Understand ‘if, else if, else’ statements
--Understand ‘while’ and ‘for’ loops.
--LISTS – be able to create, modify, and retrieve a specific item in that LIST
--DICTIONARIES – be able to create, traverse, and retrieve a certain value from that key
--FUNCTIONS – Write a simple python module that returns something, or can be just a simple print statement, and write a separate main script that imports that module and does something with it.
-  -This will help John get familiar with functions
+-COMPLETE - Understand ‘if, else if, else’ statements
+-COMPLETE - Understand ‘while’ and ‘for’ loops.
+-COMPLETE - LISTS – be able to create, modify, and retrieve a specific item in that LIST
+-COMPLETE - DICTIONARIES – be able to create, traverse, and retrieve a certain value from that key
+-FUNCTIONS
+  -COMPLETE - Write a simple python module that returns something, or can be just a simple print statement
+  -Write a separate main script that imports that module and does something with it.
+  -COMPLETE -This will help John get familiar with functions
   -This will help john understand what ‘import’ really does (difference between ‘from XX import XX, import XX, import *’)
 
 Python Environment:
@@ -16,15 +18,16 @@ Packages
 -Familiarize yourself with virtualenv and the benefits of it
 
 Useful Modules:
--Get familiar with module ‘argparse’
-  -One of the arguments should be mandatory while another one is optional
-  -If the number of arguments is incorrect, properly display the ‘help’ menu
--Get familiar with the ‘requests’ module. Write a script that performs http GET/POST requests.
--Load JSON module and play around with how to parse JSON objects
+-COMPLETE - Get familiar with module ‘argparse’ (checkHost.py, movieLookup.py)
+  -COMPLETE - One of the arguments should be mandatory while another one is optional (checkHost.py, movieLookup.py)
+  -COMPLETE - If the number of arguments is incorrect, properly display the ‘help’ menu (checkHost.py, movieLookup.py)
+-COMPLETE - Get familiar with the ‘requests’ module. Write a script that performs http GET/POST requests. (movieLookup.py)
+-COMPLETE - Load JSON module and play around with how to parse JSON objects (movieLookup.py)
 
 Projects:
--Write something in python that can ssh to a remote system, get data back (e.g. ls), and checks if something exists/matches
-  -In addition, write code that will catch an exception (e.g. if you can’t ssh into that box, inform the user with a simple ERROR message.
+-COMPLETE - Write something in python that can ssh to a remote system, get data back (e.g. ls), and checks if something exists/matches (checkHost.py ssh's to remote host, runs dpkg -l, parses output to list, checks list for packages listed as command line args)
+  -COMPLETE(ISH) - In addition, write code that will catch an exception (e.g. if you can’t ssh into that box, inform the user with a simple ERROR message. (Didn't see an obvious way to catch ssh failing, but I did give an error message based on its return code.  I added a try/except block to movieLookup.py that works)
+-COMPLETE - (ADDED BY JOHN) Write demo of requests and json modules. (movieLookup.py)
 
 Extra Credit:
 -Read over PEP8 and just familiarize yourself with a little of it.
