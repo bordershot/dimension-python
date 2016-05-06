@@ -8,11 +8,20 @@ import sys
 import requests
 
 def main():
-    url = 'http://jsonplaceholder.typicode.com/posts/1'
-    r = requests.get(url)
-    print(r.status_code)
+    root = 'http://jsonplaceholder.typicode.com/'
+    section = 'comments'
+    url = root + section
+    payload = { 'userId':'1' }
+    r = requests.get(url, params=payload)
+    print('get: ' + str(r.status_code))
+#    print(r.text)
+#    print(r.json())
+    section = 'posts/1'
+    url = root + section
+    payload = { 'id':1, 'title':'foo', 'body':'bar', 'userId':1 }
+    r = requests.put(url, data=payload)
+    print('put: ' + str(r.status_code))
     print(r.text)
-    print(r.json())
 
 
 
