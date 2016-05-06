@@ -49,11 +49,15 @@ def main():
             sys.exit(1)
         output = json.loads(r.text)
 #        print(json.dumps(output))
+#        exit(0)
 #        print(output['Search'][0]['Title'])
-        counter = 0
-        while counter < len(output['Search']):
-            print(output['Search'][counter]['Year'] + '\t' + output['Search'][counter]['Title'])
-            counter += 1
+        if args.s:
+            counter = 0
+            while counter < len(output['Search']):
+                print(output['Search'][counter]['Year'] + '\t' + output['Search'][counter]['Title'])
+                counter += 1
+        else:
+            print(output['Year']  + '\t' + output['Title'])
 
 
 if __name__ == '__main__':
