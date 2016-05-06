@@ -42,3 +42,7 @@ Sample usage:
     ./movieLookup.py "Splash"  
     ./movieLookup.py "Star Wars" -s  
 
+##reuseSSH.py  
+Project: Reuse SSH to host, run command, parse output, return 5 largest log files  
+* import function from checkHost.py  
+

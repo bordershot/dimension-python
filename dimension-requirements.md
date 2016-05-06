@@ -6,9 +6,9 @@ Understand python basics
 -COMPLETE - DICTIONARIES – be able to create, traverse, and retrieve a certain value from that key  
 -FUNCTIONS  
   -COMPLETE - Write a simple python module that returns something, or can be just a simple print statement  
-  -Write a separate main script that imports that module and does something with it.  
-  -COMPLETE -This will help John get familiar with functions  
-  -This will help john understand what ‘import’ really does (difference between ‘from XX import XX, import XX, import *’)  
+  -COMPLETE - Write a separate main script that imports that module and does something with it. (reuseSSH.py)  
+  -COMPLETE - This will help John get familiar with functions  
+  -COMPLETE - This will help john understand what ‘import’ really does (difference between ‘from XX import XX, import XX, import *’) (reuseSSH.py)  
 
 ##Python Environment:  
 Packages  
