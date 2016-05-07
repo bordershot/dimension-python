@@ -8,6 +8,7 @@ import sys
 import requests
 import argparse
 import time
+import re
 
 def main():
     parser = argparse.ArgumentParser(description='Collect SparkEV data from voltstats')
@@ -36,9 +37,11 @@ def main():
         #print(today)
         graphite_date = int(time.mktime(time.strptime(today[0], '"%m/%d/%Y %H:%M:%S %p"' )))
         if data_type == 'Download Reading Data':
-            graphite_message = graphite_message + 'spark.miles ' + today[10] + ' ' + str(graphite_date) + '\n'
+            data = re.search(r'"(\S+)"', today[10])
+            graphite_message = graphite_message + 'spark.miles ' + data.group(1) + ' ' + str(graphite_date) + '\n'
         else:
-            graphite_message = graphite_message + 'spark.dailymiles' + today[1] + ' ' + str(graphite_date) + '\n'
+            data = re.search(r'"(\S+)"', today[1])
+            graphite_message = graphite_message + 'spark.dailymiles ' + data.group(1) + ' ' + str(graphite_date) + '\n'
     print(graphite_message)
 
 
