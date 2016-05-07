@@ -9,40 +9,44 @@ import requests
 import argparse
 import time
 import re
+import graphiteclient
 
 def main():
     parser = argparse.ArgumentParser(description='Collect SparkEV data from voltstats')
     parser.add_argument('password', help='voltstats password')
+    parser.add_argument('--all', action="store_true", default=False, help='Upload all data for all time')
     args = parser.parse_args()
 
-    data_type_list = [ 'Download Reading Data', 'Download Daily Data' ]
+    data_type_dict = { 'Download Reading Data':{ 'label':'spark.miles', 'daily_line':1, 'field':10 }, 'Download Daily Data':{ 'label':'spark.dailymiles', 'daily_line':-2, 'field':1 } }
     graphite_message = ""
+    graphite_server = 'localhost'
 
     login_url = 'https://www.voltstats.net/SparkEV/Account/Login'
     data_url = 'https://www.voltstats.net/SparkEV/Account/CsvData/5875'
     login_payload = { 'Username':'bordershot', 'Password':args.password }
     s = requests.session()
     s.post(login_url, data=login_payload)
-    for data_type in data_type_list:
+    for data_type in data_type_dict:
         payload = { 'submitText':data_type }
+        #print(payload)
         r = s.post(data_url, data=payload)
-        #print(r.text)
+#        print(r.text)
         history_text = r.text
         reading_list = history_text.split('\r\n')
-        if data_type == 'Download Reading Data':
-            subscript = 1
+        if not args.all:
+            reading_list = [ reading_list[data_type_dict[data_type]['daily_line']] ]
         else:
-            subscript = -2
-        today = reading_list[subscript].split(',')
-        #print(today)
-        graphite_date = int(time.mktime(time.strptime(today[0], '"%m/%d/%Y %H:%M:%S %p"' )))
-        if data_type == 'Download Reading Data':
-            data = re.search(r'"(\S+)"', today[10])
-            graphite_message = graphite_message + 'spark.miles ' + data.group(1) + ' ' + str(graphite_date) + '\n'
-        else:
-            data = re.search(r'"(\S+)"', today[1])
-            graphite_message = graphite_message + 'spark.dailymiles ' + data.group(1) + ' ' + str(graphite_date) + '\n'
-    print(graphite_message)
+            reading_list = reading_list[1:-1]
+#        print(reading_list)
+#        print(reading_list.split(','))
+        for reading in reading_list:
+            today = reading.split(',')
+#            print(reading)
+            graphite_date = int(time.mktime(time.strptime(today[0], '"%m/%d/%Y %H:%M:%S %p"' )))
+            data = re.search( r'"(\S+)"', today[data_type_dict[data_type]['field']] )
+            graphite_message = graphite_message + data_type_dict[data_type]['label'] + ' ' + data.group(1) + ' ' + str(graphite_date) + '\n'
+    #print(graphite_message)
+    graphiteclient.upload_to_graphite(graphite_message, graphite_server)
 
 
 
