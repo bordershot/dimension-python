@@ -49,6 +49,15 @@ Sample usage:
 Project: Reuse SSH to host, run command, parse output, return 5 largest log files  
 * import function from checkHost.py  
 
-## test-checkHost.py
+##test-checkHost.py
 Project: Write a unit test for a function
 * import dpkg_parse function from checkHost.py and test
+
+##dailySparkData.py
+Project: Reimplement Graphite collector from BASH with curl to Python  
+* INCOMPLETE  
+Current state:
+john@python3:~/dimension-python$ ./dailySparkData.py XXXXXXX  
+spark.miles "28927.98794" 1462557052  
+spark.dailymiles"47.40000" 1462474800  
+
