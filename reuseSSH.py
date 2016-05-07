@@ -20,7 +20,7 @@ def main():
     output = ssh_to_host(args.host, 'ls -lSh /var/log/')
 #    print(output)
     parse_output = re.findall(r'-\S+\s+\S+\s+\S+\s+\S+\s+(\S+)\s+\S+\s+\S+\s+\S+\s+(\S+)',output)
-    print('5 largest log files on tardis:')
+    print('5 largest log files on ' + args.host + ':')
     for file in parse_output[:5]:
         print(file[0] + '\t' +  file[1])
 
