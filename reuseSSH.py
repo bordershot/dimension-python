@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-#Dimension requirements fulfilled:
-#Project: Reuse SSH to host, run command, parse output,
-#         return 5 largest log files
-#* import function from checkHost.py
+Dimension requirements fulfilled:
+Project: Reuse SSH to host, run command, parse output,
+         return 5 largest log files
+* import function from checkHost.py
 """
 
 
