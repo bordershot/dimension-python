@@ -7,6 +7,7 @@ Unit test for checkHost.parse_dpkg(text) with sample output from dpkg -l
 import unittest
 import checkHost
 
+
 class TestParsing(unittest.TestCase):
     def test_parser(self):
         dpkg_output = """Desired=Unknown/Install/Remove/Purge/Hold
@@ -19,12 +20,13 @@ class TestParsing(unittest.TestCase):
     ii  account-plugin-flickr                       0.12+16.04.20160126-0ubuntu1                        all          GNOME Control Center account plugin for single signon - flickr
     ii  account-plugin-google                       0.12+16.04.20160126-0ubuntu1                        all          GNOME Control Center account plugin for single signon
     ii  accountsservice                             0.6.40-2ubuntu10                                    amd64        query and manipulate user account information"""
-#    def test_parser(self):
-        self.assertEqual(checkHost.parse_dpkg(dpkg_output), [ 'a11y-profile-manager-indicator', 'account-plugin-facebook', 'account-plugin-flickr', 'account-plugin-google', 'accountsservice' ])
-
-
-#def main():
+        self.assertEqual(checkHost.parse_dpkg(dpkg_output),
+                         ['a11y-profile-manager-indicator',
+                          'account-plugin-facebook',
+                          'account-plugin-flickr',
+                          'account-plugin-google',
+                          'accountsservice'])
 
 
 if __name__ == '__main__':
-      unittest.main()
+    unittest.main()
