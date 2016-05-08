@@ -55,9 +55,5 @@ Project: Write a unit test for a function
 
 ##dailySparkData.py
 Project: Reimplement Graphite collector from BASH with curl to Python  
-* INCOMPLETE  
-Current state:
-john@python3:~/dimension-python$ ./dailySparkData.py XXXXXXX  
-spark.miles "28927.98794" 1462557052  
-spark.dailymiles"47.40000" 1462474800  
-
+* logs in to voltstats.net, downloads data as csvs, converts to graphite, uploads  
+* import upload_to_graphite function from graphiteclient.py
