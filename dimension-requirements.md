@@ -12,11 +12,10 @@ Understand python basics
 
 ##Python Environment:  
 Packages  
--How to install/remove packages with ‘pip’  
--Understand the usage of ‘requirements.txt’  
--List installed modules in that particular python environment  
--Familiarize yourself with virtualenv and the benefits of it  
--https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/  
+-COMPLETE - How to install/remove packages with ‘pip’ (pip-packages-notes.md)  
+-COMPLETE - Understand the usage of ‘requirements.txt’ (pip-packages-notes.md)  
+-COMPLETE - List installed modules in that particular python environment (pip-packages-notes.md)  
+-COMPLETE - Familiarize yourself with virtualenv and the benefits of it (pip-packages-notes.md)  
 
 ##Useful Modules:  
 -COMPLETE - Get familiar with module ‘argparse’ (checkHost.py, movieLookup.py)  
@@ -32,6 +31,6 @@ Packages
 
 ##Extra Credit:  
 -Read over PEP8 and just familiarize yourself with a little of it.  
--COMPLETE - Run ‘pyflakes’ or ‘flake8’ against your code to see what it does and understand why it’s giving you errors (Issues created in github)  
+-COMPLETE - Run ‘pyflakes’ or ‘flake8’ against your code to see what it does and understand why it’s giving you errors (Issues created in github for pep8 and pyflakes)  
 -COMPLETE(ISH) - Write unit tests for your scripts (test-checkHost.py, check that my regex parses dpkg -l output)  
 -COMPLETE - I know John runs some trending graphs at home. Write python script(s) that will retrieve the metrics from his home devices and POST it to his trending backend. 
