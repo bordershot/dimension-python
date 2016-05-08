@@ -49,6 +49,12 @@ Sample usage:
 Project: Reuse SSH to host, run command, parse output, return 5 largest log files  
 * import function from checkHost.py  
 
+##moduleImport.py
+Project: Demonstrate usage of different import commands
+* from math import pi  
+* import os  
+* from random import *  
+
 ##test-checkHost.py
 Project: Write a unit test for a function
 * import dpkg_parse function from checkHost.py and test
