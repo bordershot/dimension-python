@@ -1,8 +1,8 @@
 ##Playtime with pip, virtualenv, different python versions.
 
 ###Documentation References
-https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/
-https://pip.pypa.io/en/stable/user_guide/
+https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/  
+https://pip.pypa.io/en/stable/user_guide/  
 
 ###pip list and install
 ```
