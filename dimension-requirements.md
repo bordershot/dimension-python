@@ -16,6 +16,7 @@ Packages
 -Understand the usage of ‘requirements.txt’  
 -List installed modules in that particular python environment  
 -Familiarize yourself with virtualenv and the benefits of it  
+-https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/  
 
 ##Useful Modules:  
 -COMPLETE - Get familiar with module ‘argparse’ (checkHost.py, movieLookup.py)  
