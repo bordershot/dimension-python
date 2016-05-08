@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 
 """
-Query http://www.omdbapi.com/ for movie data.  Parse JSON output into dictionary.  Report.
+Query http://www.omdbapi.com/ for movie data.
+Parse JSON output into dictionary.
+Report.
 
 Dimension requirements fulfilled:
 Project: Get familiar with JSON, requests, argparse modules
@@ -18,7 +20,8 @@ Project: Get familiar with JSON, requests, argparse modules
         * Only get, put/post not supported on API
     * json:
         * Use json.loads to convert json to Dictionary
-        * Search returns multiple movies, so Dictionary contains a list of dictionaries per movie
+        * Search returns multiple movies,
+          so Dictionary contains a list of dictionaries per movie
 Sample usage:
     ./movieLookup.py "Splash"
     ./movieLookup.py "Star Wars" -s
@@ -29,26 +32,29 @@ import requests
 import json
 import argparse
 
+
 def main():
     parser = argparse.ArgumentParser(description='Lookup Movies.')
     parser.add_argument('movie', action='append', help='Movie to find')
-    parser.add_argument('-m', '--movie', action='append', help='Additional movie to find')
-    parser.add_argument('-s', action="store_true", default=False, help='Search for movie based on keyword "movie" argument')
+    parser.add_argument('-m', '--movie', action='append',
+                        help='Additional movie to find')
+    parser.add_argument('-s', action="store_true", default=False,
+                        help='Search based on keyword "movie" argument')
     args = parser.parse_args()
 
-    reporting_info = [ 'Title', 'Year' ]
+    reporting_info = ['Title', 'Year']
 
     root = 'http://www.omdbapi.com/'
     section = ''
     url = root + section
 #    payload = { 't':'Doom', 'r':'json', 'tomatoes':'true' }
 
-    #movie_info = {}
+    # movie_info = {}
     for movie in args.movie:
         if args.s:
-            payload = { 's':movie, 'r':'json'}
+            payload = {'s': movie, 'r': 'json'}
         else:
-            payload = { 't':movie, 'r':'json'}
+            payload = {'t': movie, 'r': 'json'}
         try:
             r = requests.get(url, params=payload)
         except:
@@ -61,11 +67,12 @@ def main():
         if args.s:
             counter = 0
             while counter < len(output['Search']):
-                print(output['Search'][counter]['Year'] + '\t' + output['Search'][counter]['Title'])
+                print(output['Search'][counter]['Year'] +
+                      '\t' + output['Search'][counter]['Title'])
                 counter += 1
         else:
-            print(output['Year']  + '\t' + output['Title'])
+            print(output['Year'] + '\t' + output['Title'])
 
 
 if __name__ == '__main__':
-      main()
+    main()
