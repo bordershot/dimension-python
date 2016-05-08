@@ -6,8 +6,8 @@ def upload_to_graphite(message, server='localhost', port=2003, proto='udp'):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         try:
             s.connect((server, port)) #function takes tuple of (servername, port)
-            s.sendall(bytes(message, 'utf-8'))
+            s.sendall(message.encode('ascii'))
             s.close()
         except:
-            sys.stderr.write('ERROR: Could not write to Graphite')
+            sys.stderr.write('ERROR: Could not write to Graphite ' + str(sys.exc_info()[0]))
             sys.exit(1)
