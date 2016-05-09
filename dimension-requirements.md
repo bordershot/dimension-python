@@ -26,7 +26,7 @@
 
 ##Projects:  
 -COMPLETE - Write something in python that can ssh to a remote system, get data back (e.g. ls), and checks if something exists/matches (checkHost.py ssh's to remote host, runs dpkg -l, parses output to list, checks list for packages listed as command line args)  
-  -COMPLETE(ISH) - In addition, write code that will catch an exception (e.g. if you can’t ssh into that box, inform the user with a simple ERROR message. (Didn't see an obvious way to catch ssh failing, but I did give an error message based on its return code.  I added a try/except block to movieLookup.py that works)  
+  -COMPLETE - In addition, write code that will catch an exception (e.g. if you can’t ssh into that box, inform the user with a simple ERROR message. (checkHost.py, movieLookup.py)
 -COMPLETE - (ADDED BY JOHN) Write demo of requests and json modules. (movieLookup.py)  
 
 ##Extra Credit:  
