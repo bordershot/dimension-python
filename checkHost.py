@@ -26,10 +26,14 @@ def ssh_to_host(hostname, command):
     """
     ssh_to_host will ssh to the 'hostname' argument and run 'command'
     """
-    ssh_cmd = 'ssh ' + hostname + ' ' + command
-    (status, output) = subprocess.getstatusoutput(ssh_cmd)
-    if status:
-        sys.stderr.write('ERROR: SSH unsuccessful to ' + hostname + '\n')
+    try:
+        ssh_cmd = 'ssh ' + hostname + ' ' + command
+        (status, output) = subprocess.getstatusoutput(ssh_cmd)
+        if status:
+            raise ValueError(hostname + ': ERROR: SSH unsuccessful' + '\n')
+            # sys.stderr.write('ERROR: SSH unsuccessful to ' + hostname + '\n')
+    except ValueError as err:
+        sys.stderr.write(err.args[0])
     return output
 
 
